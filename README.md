@@ -1,4 +1,4 @@
 # React Shop 
 
- [Demo](https://github.com/Vitkin123/shop).
+ [Demo](https://Vitkin123.github.io/shop).
 
