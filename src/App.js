@@ -6,11 +6,11 @@ import {Shop} from "./Components/Shop";
 
 function App() {
     return (
-        <>
+        <div className={"general"}>
             <Header/>
             <Shop/>
             <Footer/>
-        </>
+        </div>
 
 
     );

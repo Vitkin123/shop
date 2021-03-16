@@ -24,6 +24,7 @@ export const GoodsItem = (props) => {
             <div className="card-action">
                 <button
                     className={"btn"}
+                    style={{backgroundColor: "#00ab6b", color: "black"}}
                     onClick={() => addItem({
                         id,
                         name,

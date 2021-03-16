@@ -100,7 +100,7 @@ export const Shop = () => {
     }, [])
 
     return (
-        <main className={"container content"}>
+        <main className={"container content shop"}>
             <Cart quantity={order.length} hadleCartShow={handleCartShow}/>
             {
                 loading ? <Preloader/> : <GoodsList goods={goods} addItem={addItemToCart}/>
