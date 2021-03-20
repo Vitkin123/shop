@@ -1,3 +1,7 @@
+import {ShopContext} from "../Context";
+import {useContext} from "react";
+
+
 export const GoodsItem = (props) => {
 
 
@@ -6,14 +10,15 @@ export const GoodsItem = (props) => {
         name,
         description,
         price,
-        full_background,
-        addItem
+        full_background
+
 
     } = props;
 
+    const {addItemToCart} = useContext(ShopContext);
 
     return (
-        <div className="card goods-item">
+        <div className="card goods-item hoverable">
             <div className="card-image waves-effect waves-block waves-light">
                 <img className="activator" src={full_background} alt={name}/>
             </div>
@@ -25,7 +30,7 @@ export const GoodsItem = (props) => {
                 <button
                     className={"btn"}
                     style={{backgroundColor: "#00ab6b", color: "black"}}
-                    onClick={() => addItem({
+                    onClick={() => addItemToCart({
                         id,
                         name,
                         price

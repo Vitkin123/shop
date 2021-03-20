@@ -1,15 +1,15 @@
 import {CartItem} from "./CartItem";
+import {useContext} from "react";
+import {ShopContext} from "../Context";
 
 export const CartList = (props) => {
 
     const {
         order = [],
         handleCartShow = Function.prototype,
-        removeFromCart = Function.prototype,
-        decQuantity,
-        incQuantity
+        handleCheckoutShow
     }
-        = props;
+        = useContext(ShopContext);
 
     const totalPrice = order.reduce((sum, el) => {
         return sum + el.price * el.quantity;
@@ -17,24 +17,27 @@ export const CartList = (props) => {
 
     return (
         <ul className="collection cart-list">
-            <li className="collection-item active">Cart</li>
+            <li className="collection-item" style={{backgroundColor: "#00ab6b", color: "black"}}>Cart</li>
             {
                 order.length ? order.map((item) => {
                     return <CartItem
                         key={item.id}
                         {...item}
-                        removeFromCart={removeFromCart}
-                        decQuantity={decQuantity}
-                        incQuantity={incQuantity}
-
                     />
-                }) : <li className="collection-item">
+                }) : <li className="collection-item grey lighten-2">
                     Cart is empty
                 </li>
             }
-            <li className="collection-item active">Total price {totalPrice} NIS</li>
-            <li className="collection-item">
-                <button className={"btn-small"}>Checkout</button>
+            <li className="collection-item" style={{backgroundColor: "#00ab6b", color: "black"}}>
+                Total price {totalPrice} NIS
+            </li>
+            <li className="collection-item grey lighten-2">
+                <button
+                    className={"btn-small"}
+                    style={{backgroundColor: "#00ab6b", color: "black"}}
+                    onClick={() => handleCheckoutShow(totalPrice)}
+                >Checkout
+                </button>
             </li>
             <i className={"material-icons cart-close"} onClick={handleCartShow}>close</i>
         </ul>

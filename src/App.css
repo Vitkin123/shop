@@ -11,12 +11,9 @@
     background-color: #02b875;
 }
 
-.general{
+.general {
     background-color: #e8f3ec;
 }
-
-
-
 
 .App-header {
     background-color: #282c34;
@@ -34,6 +31,19 @@
 }
 
 
+.checkout{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 60rem;
+    max-width: 95%;
+    z-index: 90;
+    animation: show 500ms ease-in-out;
+}
+
+
 .cart-list {
     position: fixed;
     top: 50%;
@@ -43,9 +53,7 @@
     width: 50rem;
     max-width: 95%;
     z-index: 90;
-
     animation: show 500ms ease-in-out;
-
 }
 
 .cart-close {
@@ -75,6 +83,12 @@
     cursor: pointer;
     vertical-align: middle;
     color: #26a69a;
+}
+
+.pay-button{
+ margin-left: 40px;
+    background-color:#26a69a ;
+    color: black;
 }
 
 #toast-container {
